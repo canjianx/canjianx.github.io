@@ -1,3 +1,5 @@
 name: My Garage
 markdown: kramdown
 pygments: true
+kramdown:
+  input: GFM
