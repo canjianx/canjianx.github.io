@@ -3,6 +3,7 @@ layout: post
 title:  "Document of Wkhtmltopdf in simple chinese"
 date:   2014-03-22 11:31:59
 categories: jekyll update
+excerpt: "wkhtmltopdf是一个可以把html文档转化成pdf文档的程序，下面是它的手册"
 ---
 # wkhtmltopdf 0.10.2 rc2 手册
 
