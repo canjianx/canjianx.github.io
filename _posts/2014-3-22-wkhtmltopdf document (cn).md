@@ -289,7 +289,7 @@ function subst() {
 wkhtmltopdf toc http://doc.trolltech.com/4.6/qstring.html qstring.pdf
 ```
 
-这个目录基于h标签(例如<h1\><h2\>...)来生成的，首先生成一个xml,然后使用xslt转换成html.
+这个目录基于h标签(例如<h1\><h2\>)来生成的，首先生成一个xml,然后使用xslt转换成html.
 
 生成的xml文档可以使用--dump-outline输出来看。
 
