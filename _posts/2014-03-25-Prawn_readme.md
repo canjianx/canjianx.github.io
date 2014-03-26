@@ -3,9 +3,11 @@ layout: post
 title:  "Fast, Nimble PDF Generation For Ruby"
 date:   2014-03-25 11:31:59
 categories: jekyll update
+excerpt: "Prawn is a Fast, Nimble PDF Generation For Ruby"
 ---
 
 # Prawn: Fast, Nimble PDF Generation For Ruby
+
 # Prawn: Ruby下的快速的，敏捷的PDF生成工具
 
 org/prawnpdf/prawn)
@@ -37,8 +39,11 @@ Prawn是一个纯的ruby pdf生成库， 它在提供了很多很好的功能的
 * 低级别的pdf特性，允许用户创建自定义的扩展，通过下拉树状所有的pdf对象（对有pdf规格知识的人有用）
 * Lots of other stuff!
 还有很多其他东西。
+
 ## Should You Use Prawn?
+
 ## 你应该使用Prawn么？
+
 If you are looking for a highly flexible PDF document generation system, Prawn might be the tool for you. It is not a reporting tool or a publishing toolchain, though it could be fairly easily used to build those things.
 如果你在找一个高灵活的PDF文档生成系统， Prawn可能是你要找的工具，它不是一个报表工具，或者发布工具链，虽然它可以很轻松的做这件事。
 
@@ -46,7 +51,9 @@ One thing Prawn is not, and will never be, is an HTML to PDF generator. For thos
 Prawn 有一件事不能也不准备做，从html到pdf的生成器。如果你需要那样的工具，可以考虑看看使用JRuby的FlyingSaucer，或者另外一个基于webkit的工具，像Wicked 或者PDFKit. 我们做的是基本的内部样式的支持但是它被限制在一个很小的功能子目录，而且不适合渲染复杂的HTML文档。
 
 ## Supported Ruby Versions and Implementations
+
 ## 支持的Ruby版本和实现
+
 Because Prawn is pure Ruby and all of its runtime dependencies are maintained
 by us, it should work pretty much anywhere. We officially support
 MRI {1.9.3, 2.0.0, 2.1.x} and jruby 1.7.x (>= 1.7.9) in 1.9 mode, however 
@@ -55,6 +62,7 @@ Ruby platforms if they aren't too invasive.
 因为Prawn是一个纯Ruby库，而且它的运行时依赖是被我们维护的它可以在所有的地方工作的相当好。 我们官方支持MRI(1.9.3, 2.0.0, 2.1.x)还有jruby(1.7.x（>=1.7.9)在1.9的模式，然而 我们将会接受修复其他ruby平台的补丁， 如果这些补丁不是特别具有侵略性的话。
 
 ## Installing Prawn
+
 ## 安装Prawn
 
 Prawn is distributed via RubyGems, and can be installed the usual way that you install gems: by simply typing `gem install prawn` on the command line. 
@@ -63,7 +71,9 @@ Prawn是童工RubyGems发布的，可以通过简单的在命令行输入`gem in
 You can also install from git if you'd like, the _master_ branch contains the latest developments, and _stable_ represents the latest bug fixes to the currently released version of Prawn. If you go this route, using Bundler is encouraged.
 
 如果你想你也可以通过git来安装。主分支包含了最新开发版和最新稳定版的bug修复版，如果你想使用这个版本，鼓励使用Bundler。
+
 ## Hello World!
+
 ## Hello World!
 
 If the following code runs and produces a working PDF file, you've successfully installed Prawn.
@@ -73,16 +83,20 @@ If the following code runs and produces a working PDF file, you've successfully 
     end
 Of course, you'll probably want to do more interesting things than that...
 如果下面的代码可以运行，说明你的Prawn安装成功了。
+
 ```
     require "prawn"
     Prawn::Document.generate("hello.pdf") do
       text "Hello World!"
     end
 ```
+
 当然， 你肯定想做比这有意思多的事情。。。
 
 ## Manual
+
 ## 手册
+
 Felipe Doria provided us with a beautiful system for generating a user manual from our examples. This can be generated from the prawn source or you can download a pre-generated snapshot of it at http://prawnpdf.org/manual.pdf
 Felipe Doria 给我们提供了从我们的例子里生成手册的一个漂亮的系统。手册可以通过prawn来生成，或者从http://prawnpdf.org/manual.pdf下载一份
 Note that while we will try to keep the downloadable manual up to date, that it's provided as a convenience only and you should generate the manual yourself if you want to be sure the code in it actually runs and works as expected. To build the manual, here's what you need to do:
@@ -97,8 +111,11 @@ Note that while we will try to keep the downloadable manual up to date, that it'
 - 运行`bundle install`
 5. run `bundle exec rake manual`, which will generate _manual.pdf_ in the project root
 - 运行 `bundle exec rake manual`, 这将会在项目根目录生成manual.pdf. 
+
 ## Release Policies
+
 ## 发布策略
+
 Before upgrading Prawn on one of your projects, you should read our [API
 compatibility](https://github.com/prawnpdf/prawn/wiki/API-Compatibility-Notes)
 guidelines. Generally speaking, you can expect tiny version updates to always be
@@ -108,7 +125,9 @@ safe upgrads, but minor and major updates can introduce incompatibilities.
 Be sure to read the release notes each time we cut a new release and lock your gems accordingly. 
 You can find the project CHANGELOG at: https://github.com/prawnpdf/prawn/wiki/CHANGELOG
 确保每次阅读发布通告，有时候我们会砍一些功能，所以确保你锁定你的gems 你可以找到项目的修改日志https://github.com/prawnpdf/prawn/wiki/CHANGELOG
+
 ## Support 
+
 ## 支持
 
 The easiest way to get help with Prawn is to post a message to our mailing list:
@@ -118,8 +137,11 @@ Feel free to post any Prawn related question there, our community is very respon
 你可以发送所有的prawn相关的问题到那里，我们的社区是很负责的而且也很乐意帮助你指出应该怎样使用Prawn,或者帮助你是否你适合使用这个工具。
 Please make your posts to the list as specific as possible, including code samples and output where relevant. Do not post any information that should not be shared publicly, and be sure to reduce your example code as much as possible so that those who are responding to your question can more easily see what the issue might be.
 请确保你的提交是尽量别人没有提交过的，最好包含代码样例和相关的输出，不要发送任何不应该公开的信息。而且请确保你提交的代码最小化，这样别人可以很容易的找到问题所在。
+
 ## Contributing
+
 ## 贡献
+
 If you've found a bug or want to submit a patch, please enter a ticket into our github tracker:
 如果你发现一个bug或者像提交一个补丁，在我们的github tracker中增加一个ticket
 <http://github.com/prawnpdf/prawn/issues>
@@ -160,28 +182,39 @@ overall direction of the project.
 These are the folks to contact if you have a maintenance-related issue with
 Prawn:
 如果你有维护相关的问题，请联系下面几个folk.
+
 * Gregory Brown (sandal)
 * Evan Sharp (PacketMonkey)
 * Alexander Mankuta (cheba)
+
 ### Inactive maintainers
+
 ### 不活跃的维护人员
+
 These folks have helped out in a maintenance role in the past, but are no longer
 actively involved in the project:
 这几个folk是用来维护以前的版本，在当前活跃的版本中已经不采纳的。
+
 * Brad Ediger (bradediger)
 * James Healy (yob)
 * Daniel Nelson (Bluejade)
 * Jonathan Greenberg (jonsgreen)
 * Jamis Buck (jamis)
+
 ## License
+
 ## 版权
+
 Prawn is released under a slightly modified form of the License of Ruby, allowing you to choose between Matz's terms, the GPLv2, or GPLv3. For details, please see the LICENSE, GPLv2, and GPLv3 files.
 Prawn是在Ruby的版权的修订版，允许你在Matz's GPLv2 GPLv3中选择，详情请查阅相关文档。
 
 If you contribute to Prawn, you will retain your own copyright but must agree to license your code under the same terms as the project itself.
 如果你是prawn的贡献者，你可以保持自己的版权，但是必须同意你的代码作为项目的一部分在相同的版权下。
+
 ## History
+
 ## 历史
+
 Prawn was originally developed by Gregory Brown, under the auspices of the Ruby
 Mendicant Project, a grassroots initiative in which the Ruby community
 collectively provided funding so that Gregory could take several months off of
