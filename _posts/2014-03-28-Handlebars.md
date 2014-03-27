@@ -8,6 +8,8 @@ excerpt: "Handlebars 能让你很容易的建立有效的语义化的模板。"
 
 Handlebars 能让你很容易的建立有效的语义化的模板。
 
+**由于markdown在code字段对\{\{的影响，所以在code中\{\{增加了一个空格来适应这个问题。切记。文中代码中\{ \{ 代表\{\{, \} \} 代表\}\}**
+
 Mustache 模板和Handlebars兼容，所以你可以使用Mustache模板，导入到Handldbars中，然后开始使用Handlebars的其他高级功能。
 
 ## 开始
@@ -23,7 +25,7 @@ Handlebars模板看上去像一般的HTML, 嵌入了handlebars表达式
 </div>
 ```
 
-Handlebars表达式是包含在“{ {} }”的，例如{ {内容} }。
+Handlebars表达式是包含在“\{\{ \}\}”的，例如\{\{内容\}\}。
 
 你可以把模板放到<script>标签中以便传给浏览器
 
@@ -62,13 +64,13 @@ var html = template(context);
 
 ## HTML转码
 
-使用{ {表达式} }返回的html是转码过的HTML. 如果你不希望Handlebars转码，就使用三重大括号，`{ {\{} }\}`
+使用\{\{表达式\}\}返回的html是转码过的HTML. 如果你不希望Handlebars转码，就使用三重大括号，`{ { { } } }`
 
 ```html
 <div class="entry">
   <h1>{ {title} }</h1>
   <div class="body">
-    { {\{body} }\}
+    { { {body} } }
   </div>
 </div>
 ```
@@ -104,7 +106,7 @@ Handlebars.registerHelper('link', function(text, url) {
 });
 ```
 
-这个函数将会包装传入的参数，但是让返回值安全，这样Handlebars将 不会对它做转码，即使"{ {\{} }\}"没使用。
+这个函数将会包装传入的参数，但是让返回值安全，这样Handlebars将 不会对它做转码，即使"\{\{\{\}\}\}"没使用。
 
 ## 块表达式
 
