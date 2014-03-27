@@ -62,7 +62,7 @@ var html = template(context);
 
 ## HTML转码
 
-使用{{表达式}}返回的html是转码过的HTML. 如果你不希望Handlebars转码，就使用三重大括号，`{{{`
+使用{{表达式}}返回的html是转码过的HTML. 如果你不希望Handlebars转码，就使用三重大括号，`{{{}}}`
 
 ```html
 <div class="entry">
@@ -104,7 +104,7 @@ Handlebars.registerHelper('link', function(text, url) {
 });
 ```
 
-这个函数将会包装传入的参数，但是让返回值安全，这样Handlebars将 不会对它做转码，即使"{{{"没使用。
+这个函数将会包装传入的参数，但是让返回值安全，这样Handlebars将 不会对它做转码，即使"{{{}}}"没使用。
 
 ## 块表达式
 
