@@ -23,7 +23,7 @@ Handlebars模板看上去像一般的HTML, 嵌入了handlebars表达式
 </div>
 ```
 
-Handlebars表达式是包含在“{{}}”的，例如{{内容}}。
+Handlebars表达式是包含在“\{\{\}\}”的，例如\{\{内容\}\}。
 
 你可以把模板放到<script>标签中以便传给浏览器
 
@@ -62,13 +62,13 @@ var html = template(context);
 
 ## HTML转码
 
-使用{{表达式}}返回的html是转码过的HTML. 如果你不希望Handlebars转码，就使用三重大括号，`{{{}}}`
+使用\{\{表达式\}\}返回的html是转码过的HTML. 如果你不希望Handlebars转码，就使用三重大括号，`\{\{\{\}\}\}`
 
 ```html
 <div class="entry">
-  <h1>{{title}}</h1>
+  <h1>\{\{title\}\}</h1>
   <div class="body">
-    {{{body}}}
+    \{\{\{body\}\}\}
   </div>
 </div>
 ```
@@ -104,16 +104,16 @@ Handlebars.registerHelper('link', function(text, url) {
 });
 ```
 
-这个函数将会包装传入的参数，但是让返回值安全，这样Handlebars将 不会对它做转码，即使"{{{}}}"没使用。
+这个函数将会包装传入的参数，但是让返回值安全，这样Handlebars将 不会对它做转码，即使"\{\{\{\}\}\}"没使用。
 
 ## 块表达式
 
 块表达式可以让你定义一个帮助函数，它可以使用非当前的数据来调用一段模板。让我们看下面产生列表的例子：
 
 ```
-{{#list people}}
-    {{firstName}} {{lastName}}
-{{/list}}
+\{\{#list people\}\}
+    \{\{firstName\}\} \{\{lastName\}\}
+\{\{/list\}\}
 ```
 
 如果我们有下面的数据：
@@ -159,17 +159,17 @@ Handlebars.registerHelper('list', function(items, options) {
 Handlebars支持简单的目录结构，像Mustache.
 
 ```
-<p>{{name}}</p>
+<p>\{\{name\}\}</p>
 ```
 
 Handlebars还支持嵌套的目录，使查找下面这种嵌套的属性成为可能。
 
 ```html
 <div class="entry">
-  <h1>{{title}}</h1>
-  <h2>By {{author.name}}</h2>
+  <h1>\{\{title\}\}</h1>
+  <h2>By \{\{author.name\}\}</h2>
   <div class="body">
-    {{body}}
+    \{\{body\}\}
   </div>
 </div>
 ```
@@ -194,10 +194,10 @@ var context = {
 ```html
 <h1>Comments</h1>
 <div id="comments">
-  {{#each comments}}
-  <h2><a href="/posts/{{../permalink}}#{{id}}">{{title}}</a></h2>
-  <div>{{body}}</div>
-  {{/each}}
+  \{\{#each comments\}\}
+  <h2><a href="/posts/\{\{../permalink\}\}#\{\{id\}\}">\{\{title\}\}</a></h2>
+  <div>\{\{body\}\}</div>
+  \{\{/each\}\}
 </div>
 ```
 
@@ -208,21 +208,21 @@ var context = {
 Handlebars还允许使用`this`来解决数据域和帮助函数之间的名字冲突。
 
 ```html
-<p>{{./name}} or {{this/name}} or {{this.name}}</p>
+<p>\{\{./name\}\} or \{\{this/name\}\} or \{\{this.name\}\}</p>
 ```
 
 上面任何一种表述都会调用数据当前路径中的name，而不是帮助函数中同名的变量。
 
-## 使用{{!}} 或者 {{!-- --}}来做注释
+## 使用\{\{!\}\} 或者 \{\{!-- --\}\}来做注释
 
 你可以在Handlebars模板中像在代码中一样使用注释。因为这是几个级别的逻辑，所以这个是个好的实践。
 
 ```html
 <div class="entry">
-  {{! only output this author names if an author exists }}
-  {{#if author}}
-    <h1>{{firstName}} {{lastName}}</h1>
-  {{/if}}
+  \{\{! only output this author names if an author exists \}\}
+  \{\{#if author\}\}
+    <h1>\{\{firstName\}\} \{\{lastName\}\}</h1>
+  \{\{/if\}\}
 </div>
 ```
 
@@ -230,12 +230,12 @@ Handlebars还允许使用`this`来解决数据域和帮助函数之间的名字�
 
 ```
 <div class="entry">
-  {{! This comment will not be in the output }}
+  \{\{! This comment will not be in the output \}\}
   <!-- This comment will be in the output -->
 </div>
 ```
 
-如果注释中想包含任何Handlebars的关键字例如`}}`应该使用`{{!--内容--}}`。
+如果注释中想包含任何Handlebars的关键字例如`\}\}`应该使用`\{\{!--内容--\}\}`。
 
 ## 帮助函数
 
@@ -243,13 +243,13 @@ Handlebars帮助函数可以访问模板关联的任何数据。你可以使用`
 
 ```html
 <div class="post">
-  <h1>By {{fullName author}}</h1>
-  <div class="body">{{body}}</div>
+  <h1>By \{\{fullName author\}\}</h1>
+  <div class="body">\{\{body\}\}</div>
   <h1>Comments</h1>
-  {{#each comments}}
-  <h2>By {{fullName author}}</h2>
-  <div class="body">{{body}}</div>
-  {{/each}}
+  \{\{#each comments\}\}
+  <h2>By \{\{fullName author\}\}</h2>
+  <div class="body">\{\{body\}\}</div>
+  \{\{/each\}\}
 </div>
 ```
 
@@ -285,9 +285,9 @@ Handlebars.registerHelper('fullName', function(person) {
 
 ```html
 <ul>
-  {{#each items}}
-  <li>{{agree_button}}</li>
-  {{/each}}
+  \{\{#each items\}\}
+  <li>\{\{agree_button\}\}</li>
+  \{\{/each\}\}
 </ul>
 ```
 
@@ -327,9 +327,9 @@ Handlebars.registerHelper('agree_button', function() {
 一般情况下， Handlebars模板对应相应的数据传入编译函数
 
 ```javascript
-var source = "<p>{{lastName}}, {{firstName}}</p>";
+var source = "<p>\{\{lastName\}\}, \{\{firstName\}\}</p>";
 var template = Handlebars.compile(source);
-template({firstName: "Alan", lastName: "Johnson"});
+template(\{firstName: "Alan", lastName: "Johnson"\});
 ```
 
 结果是
@@ -342,10 +342,10 @@ template({firstName: "Alan", lastName: "Johnson"});
 
 ```html
 <div class="entry">
-  <h1>{{title}}</h1>
-  {{#with author}}
-  <h2>By {{firstName}} {{lastName}}</h2>
-  {{/with}}
+  <h1>\{\{title\}\}</h1>
+  \{\{#with author\}\}
+  <h2>By \{\{firstName\}\} \{\{lastName\}\}</h2>
+  \{\{/with\}\}
 </div>
 ```
 
@@ -376,9 +376,9 @@ template({firstName: "Alan", lastName: "Johnson"});
 
 ```html
 <ul class="people_list">
-  {{#each people}}
-  <li>{{this}}</li>
-  {{/each}}
+  \{\{#each people\}\}
+  <li>\{\{this\}\}</li>
+  \{\{/each\}\}
 </ul>
 ```
 
@@ -406,30 +406,30 @@ template({firstName: "Alan", lastName: "Johnson"});
 
 你可以在任意域中使用this来引用当前域。
 
-你可以选择使用`{{else}}` 部分来显示列表为空的时候该显示的内容。
+你可以选择使用`\{\{else\}\}` 部分来显示列表为空的时候该显示的内容。
 
 ```html
-{{#each paragraphs}}
-  <p>{{this}}</p>
-{{else}}
+\{\{#each paragraphs\}\}
+  <p>\{\{this\}\}</p>
+\{\{else\}\}
   <p class="empty">No content</p>
-{{/each}}
+\{\{/each\}\}
 ```
 
-在`each`中遍历元素时，你可以有选择的引用当前循环的索引，使用`{{@index}}`
+在`each`中遍历元素时，你可以有选择的引用当前循环的索引，使用`\{\{@index\}\}`
 
 ```html
-{{#each array}}
-  {{@index}}: {{this}}
-{{/each}}
+\{\{#each array\}\}
+  \{\{@index\}\}: \{\{this\}\}
+\{\{/each\}\}
 ```
 
-如果是对象遍历器，`{{@key}}`代表当前的`key`名字：
+如果是对象遍历器，`\{\{@key\}\}`代表当前的`key`名字：
 
 ```html
-{{#each object}}
-  {{@key}}: {{this}}
-{{/each}}
+\{\{#each object\}\}
+  \{\{@key\}\}: \{\{this\}\}
+\{\{/each\}\}
 ```
 
 在数组循环中第一个和最后一个可以使用`@first`和`@last`来标记，在对象中循环，只有`@first`有效。
@@ -440,9 +440,9 @@ template({firstName: "Alan", lastName: "Johnson"});
 
 ```html
 <div class="entry">
-  {{#if author}}
-  <h1>{{firstName}} {{lastName}}</h1>
-  {{/if}}
+  \{\{#if author\}\}
+  <h1>\{\{firstName\}\} \{\{lastName\}\}</h1>
+  \{\{/if\}\}
 </div>
 ```
 
@@ -453,15 +453,15 @@ template({firstName: "Alan", lastName: "Johnson"});
 </div>
 ```
 
-当使用一个块表达式，你可以为表达式返回一个假值指定一个模板域。这个域，被叫做其他域，使用`{{else}}`。
+当使用一个块表达式，你可以为表达式返回一个假值指定一个模板域。这个域，被叫做其他域，使用`\{\{else\}\}`。
 
 ```html
 <div class="entry">
-  {{#if author}}
-    <h1>{{firstName}} {{lastName}}</h1>
-  {{else}}
+  \{\{#if author\}\}
+    <h1>\{\{firstName\}\} \{\{lastName\}\}</h1>
+  \{\{else\}\}
     <h1>Unknown Author</h1>
-  {{/if}}
+  \{\{/if\}\}
 </div>
 ```
 
@@ -471,9 +471,9 @@ template({firstName: "Alan", lastName: "Johnson"});
 
 ```html
 <div class="entry">
-  {{#unless license}}
+  \{\{#unless license\}\}
   <h3 class="warning">WARNING: This entry does not have a license!</h3>
-  {{/unless}}
+  \{\{/unless\}\}
 </div>
 ```
 
@@ -484,7 +484,7 @@ template({firstName: "Alan", lastName: "Johnson"});
 `log`帮助函数可以帮助做记录来记录数据的状况，在执行模板的时候。
 
 ```html
-{{log "Look at me!"}}
+\{\{log "Look at me!"\}\}
 ```
 
 委托给`Handlebars.logger.log`。这个函数是可以被重写的。
