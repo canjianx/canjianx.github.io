@@ -40,12 +40,14 @@ body {
   margin: 20px 0;
 }
 .postli{
-  list-style: none;  
+  list-style: none; 
+  margin-bottom: 30px; 
 }
 .postCell{
   min-height:200px;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   border: solid 1px #ddd;
+  cursor: pointer;
 }
 .postCell:hover{
   border:solid 1px #888;
