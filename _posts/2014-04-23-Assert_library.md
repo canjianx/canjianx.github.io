@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Assert Library"
+title:  "Assert Library-assert"
 date:   2014-04-23 13:31:59
 categories: jekyll update
-excerpt: "断言库介绍"
+excerpt: "断言库介绍1"
 ---
 
 
@@ -41,5 +41,3 @@ All Ok
 
 版权
 MIT(same as Node.js)
-
-
