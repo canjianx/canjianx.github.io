@@ -6,7 +6,6 @@ categories: jekyll update
 excerpt: "断言库介绍1"
 ---
 
-
 ##1 assert.js
 
 assert.js是Nodejs中的标准断言库对浏览器的移植。原始的代码和测试用例来自Node.js, 已经为浏览器的兼容做了相应的修改。
