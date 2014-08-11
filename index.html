@@ -8,7 +8,7 @@ title: Canjian's garage
     {% for post in site.posts %}
       <li class="postli col-xs-6 col-md-4">
       	<div class="postCell">
-	      	<span>{{ post.date | date_to_string }}</span><br><a href="{{ post.url }}">{{ post.title }}</a><br>
+	      	<span>{{ post.date | date_to_string }}</span><br><h2><a href="{{ post.url }}">{{ post.title }}</a></h2><br>
 	      	{{ post.excerpt | remove: '<p>' | remove: '</p>' }}
       	</div>
       </li>
