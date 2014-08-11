@@ -2,13 +2,9 @@
 layout: post
 title:  "在node.js构建一个模板语言，第一部分：想法"
 date:   2014-08-11 13:31:59
-categories: node.js template
+categories: node.js template 翻译
 excerpt: "node.js工程学，以及制作一个简单易懂，功能强大的template语言。"
 ---
-
-# 
-
-@(笔记)[node.js|template]
 
 欢迎来到一步一步构建node.js的基础模板语言系列的第一篇。这个世界需要另外一个模板语言么？可能不需要，但是我深信构建一个是一个很好的经历。这个系列的目标至少是关于最终产品，前期工作流和最佳实践，其中任何一个都可以运用到你的项目中去。这也是说，如果我有那里出错了或者你看到有任何改进的地方，请让我知道!
 
