@@ -89,3 +89,5 @@ excerpt: "node.js工程学，以及制作一个简单易懂，功能强大的tem
 ```
 
 在第二部分，我将会介绍如何安装Mocha, Travis CI 还有我将会写一些基础的测试用例， 如果你有任何的评论和建议，请在下面评论或者给我一封邮件。
+
+## [原文地址](http://matthewmeye.rs/blog/post/templating-language-part-1/)
