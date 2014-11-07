@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "atom和Node-webkit之间的不同"
-date:   2014-08-14 12:31:59
+date:   2014-11-7 12:31:59
 categories: node.js atom
 excerpt: "atom 文档，翻译"
 src: https://github.com/canjianx/atom

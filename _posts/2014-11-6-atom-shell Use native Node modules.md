@@ -55,6 +55,7 @@ native modules.
 和`apm`不同的，你还可以使用`node-gyp`和`npm`来手动编译原生模块。
 
 ### The node-gyp way
+
 ### `node-gyp`方式
 
 First you need to check which Node release atom-shell is carrying via
@@ -75,6 +76,7 @@ where to download the headers.
 `HOME=~/.atom-shell-gyp` 来修改从那里找到开发头。`--target=0.10.5`指定Node的版本。`--dist-url=...`指定从那里下载头。
 
 ### The npm way
+
 ### npm的方式。
 
 ```bash
