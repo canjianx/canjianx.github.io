@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "atom-shell源码结构"
-date:   2014-11-6 11:31:59
+date:   2014-11-7 11:31:59
 categories: node.js atom
 excerpt: "atom 文档，翻译"
 src: https://github.com/canjianx/atom
